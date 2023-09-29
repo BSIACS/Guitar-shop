@@ -1,14 +1,13 @@
-import { GuitarEnum } from './guitar-type.enum';
 import { StringNumber } from './string-number.type';
 
-export interface ProductInterface{
+export interface ProductInterface {
   id?: string;
-  title: string;
-  description: string;
-  dateAdded: Date;
-  imageSrc: string;
-  type: GuitarEnum;
-  article: string;
-  stringNumber: StringNumber;
-  price: string;
+  title?: string;
+  description?: string;
+  dateAdded?: Date;
+  imageSrc?: string;
+  typeId?: string;
+  article?: string;
+  stringNumber?: StringNumber;
+  price?: string;
 }

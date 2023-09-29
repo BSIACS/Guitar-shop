@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String @id @unique @default(uuid()) @db.Uuid
+  name         String @db.VarChar(64)
+  email        String @unique @db.VarChar(64)
+  passwordHash String @db.VarChar(64)
+
+  @@map("users")
+}
+
+model Product {
+  id           String   @id @unique @default(uuid()) @db.Uuid
+  title        String   @db.VarChar(64)
+  description  String
+  dateAdded    DateTime @map("date_added") @db.Timestamptz()
+  imageSrc     String   @map("image_src")
+  type         Type     @relation(fields: [typeId], references: [id])
+  typeId       String   @map("type_id") @db.Uuid
+  article      String
+  stringNumber Int      @map("string_number")
+  price        Decimal
+
+  @@map("products")
+}
+
+model Type {
+  id      String    @id @unique @default(uuid()) @db.Uuid
+  name    String    @db.VarChar(32)
+  Product Product[]
+
+  @@map("types")
+}
