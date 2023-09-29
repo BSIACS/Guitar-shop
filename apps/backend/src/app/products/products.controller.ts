@@ -19,6 +19,9 @@ export class ProductsController {
   public async getProductDetail(@Param('id') id) {
     console.log(id);
 
+    const product = await this.productsService.getProductById(id)
+
+    return product;
   }
 
   @Get('detail')

@@ -16,7 +16,7 @@ Content-Type: application/json
 ###
 
 # Get product by id
-GET   http://localhost:5557/api/products/index/c213d402-4a71-4fd6-a341-e21e3e6520bd  HTTP/1.1
+GET   http://localhost:5557/api/products/index/934a6979-3cfe-4379-891e-722b15721549  HTTP/1.1
 
 ###
 

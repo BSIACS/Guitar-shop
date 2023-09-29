@@ -5,7 +5,6 @@
   "scripts": {
     "start-all": "nx run-many --parallel --target=serve --projects=backend,frontend",
     "cli": "nx run cli:run-cli -- "
-
   },
   "private": true,
   "dependencies": {

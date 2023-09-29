@@ -14,6 +14,11 @@ export class ProductsService {
     return this.productsRepository.find();
   }
 
+
+  public async getProductById(id: string) {
+    return this.productsRepository.findById(id);
+  }
+
   public async createProduct(createProductDto: CreateProductDto){
     const productEntity = new ProductEntity({ ...createProductDto })
 

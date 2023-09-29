@@ -14,7 +14,7 @@ export class HelpCliCommand implements CliCommandInterface {
 
       Команды:
           --help:                                               # печатает этот текст
-          --generator <n> <path> <url>                          # генерирует произвольное количество тестовых данных
+          --generator <n> <connection string>                   # генерирует произвольное количество тестовых данных
     `);
   }
 

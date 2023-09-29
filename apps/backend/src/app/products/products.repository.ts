@@ -8,9 +8,18 @@ export class ProductsRepository {
 
   constructor(private readonly prisma: PrismaService){}
 
-  public async find(){
+  public async findById(id: string){
+    const product = await this.prisma.product.findMany({
+      where: {id},
+    });
 
-    return this.prisma.product.findMany();
+    return product;
+  }
+
+  public async find(){
+    const product = await this.prisma.product.findMany();
+
+    return product;
   }
 
   public async createProduct(productEntity: ProductEntity){

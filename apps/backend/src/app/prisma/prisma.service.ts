@@ -7,7 +7,6 @@ export class PrismaService extends PrismaClient implements OnModuleInit{
     console.info('[PrismaService] - trying connect to database');
     await this.$connect();
     console.info('[PrismaService] - connected');
-
   }
 
   async enableShutdownHooks(app: INestApplication) {
