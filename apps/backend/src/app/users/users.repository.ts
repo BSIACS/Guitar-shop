@@ -6,8 +6,12 @@ import { PrismaService } from '../prisma/prisma.service';
 export class UsersRepository {
   constructor(private readonly prisma: PrismaService){}
 
-  sayHello(){
-    console.log('Hello from UsersRepository!!!');
+  public async findUserByEmail(email: string){
+    const user = await this.prisma.user.findFirst({
+      where: { email },
+    });
+
+    return user;
   }
 
   public async createUser(userEntity: UserEntity){

@@ -15,6 +15,22 @@ Content-Type: application/json
 }
 ###
 
+# Login
+POST   http://localhost:5557/api/users/login  HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "admin@somemail.com",
+  "password": "admin"
+}
+###
+
+# Check is user authenticate
+POST   http://localhost:5557/api/users/checkauth  HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQHNvbWVtYWlsLmNvbSIsImlhdCI6MTY5NjA4NzU4MCwiZXhwIjoxNjk2MDg3NjQwfQ.ho1j0ibXheQ2-b_4fJuYFTf65YB4gSINbrykZvrbCNM
+
+###
+
 # Get products
 GET   http://localhost:5557/api/products/index?sortBy=date_added&page=1&sortOrder=asc&stringNumber=6  HTTP/1.1
 

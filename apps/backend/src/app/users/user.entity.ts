@@ -11,8 +11,8 @@ export class UserEntity{
   private passwordHash: string;
 
 
-  constructor(name: string, email: string){
-    this.fillEntity(name, email);
+  constructor(name: string, email: string, passwordHash: string){
+    this.fillEntity(name, email, passwordHash);
   }
 
   public toObject() {
@@ -24,10 +24,11 @@ export class UserEntity{
     };
   }
 
-  public fillEntity(name: string, email: string){
+  public fillEntity(name: string, email: string, passwordHash: string){
     this.id = uuidv4();
     this.name = name;
     this.email = email;
+    this.passwordHash = passwordHash;
   }
 
   public async setPassword(password: string): Promise<UserEntity> {
