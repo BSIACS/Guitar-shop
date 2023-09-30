@@ -3,7 +3,13 @@
 ## Генерация мок-данных для БД
 
 ```bash
-npm run cli -- --generate <n> <connection string>
+npm run cli -- --generate <n>
 ```
-Пример: `npm run cli -- --generate 20 "postgresql://admin:testpass@192.168.1.33:5432/guitar-shop"`.
+Где n - количество генерируемых товаров
+Пример: `npm run cli -- --generate 20`.
 
+## Запуск rest-api приложения
+
+```bash
+npm run backend
+```

@@ -9,5 +9,5 @@ export interface ProductInterface {
   typeId?: string;
   article?: string;
   stringNumber?: StringNumber;
-  price?: string;
+  price?: number;
 }

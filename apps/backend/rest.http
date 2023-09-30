@@ -15,8 +15,13 @@ Content-Type: application/json
 }
 ###
 
+# Get products
+GET   http://localhost:5557/api/products/index?sortBy=date_added&page=1&sortOrder=asc&stringNumber=6  HTTP/1.1
+
+###
+
 # Get product by id
-GET   http://localhost:5557/api/products/index/934a6979-3cfe-4379-891e-722b15721549  HTTP/1.1
+GET   http://localhost:5557/api/products/index/ef9f085e-6c39-4890-9c16-14460b4a6edd  HTTP/1.1
 
 ###
 
@@ -31,7 +36,7 @@ Content-Type: application/json
   "typeId": "12a664cb-c8b9-4e44-817b-fa220fb48cf8",
   "article": "CV863661",
   "stringNumber": 6,
-  "price": "5420"
+  "price": 5420
 }
 ###
 

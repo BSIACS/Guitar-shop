@@ -1,7 +1,8 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Query } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { ProductsQuery } from './query/products.query';
 
 @Controller('products')
 export class ProductsController {
@@ -9,24 +10,17 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService){}
 
   @Get('index')
-  public async getProducts() {
-    const product = await this.productsService.getProducts()
+  public async getProducts(@Query() query: ProductsQuery) {
+    const product = await this.productsService.getProducts(query)
 
     return product;
   }
 
   @Get('index/:id')
   public async getProductDetail(@Param('id') id) {
-    console.log(id);
-
     const product = await this.productsService.getProductById(id)
 
     return product;
-  }
-
-  @Get('detail')
-  getDetail() {
-    return 'Hello from ProductsController';
   }
 
   @Post('create')

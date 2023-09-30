@@ -1,7 +1,7 @@
 import { IsEmail, IsString } from 'class-validator';
 import { AUTH_USER_EMAIL_NOT_VALID } from '../../constants/validation-messages';
 
-export class CreateUserDto{
+export class LoginUserDto{
   @IsString()
   public name: string;
 

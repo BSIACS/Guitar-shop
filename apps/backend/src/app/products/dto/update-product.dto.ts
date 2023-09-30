@@ -8,5 +8,5 @@ export class UpdateProductDto{
   public typeId?: string;
   public article?: string;
   public stringNumber?: StringNumber;
-  public price?: string;
+  public price?: number;
 }

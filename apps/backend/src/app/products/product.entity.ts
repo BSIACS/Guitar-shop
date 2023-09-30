@@ -10,7 +10,7 @@ export class ProductEntity{
   public typeId: string;
   public article: string;
   public stringNumber: StringNumber;
-  public price: string;
+  public price: number;
 
   constructor(product: ProductInterface){
     this.fillEntity(product);
