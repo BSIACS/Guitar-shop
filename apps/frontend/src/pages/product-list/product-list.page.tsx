@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
 import { Footer } from '../../components/footer/footer';
 import { Header } from '../../components/header/header';
 import { HiddenBlock } from '../../components/hidden-block/hidden-block';
+import { fetchProductsDataThunk } from '../../store/slices/application.thunk';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
 
 export function ProductsListPage(): JSX.Element {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProductsDataThunk());
+  }, []);
 
   return (
     <>

@@ -24,14 +24,15 @@ export class UsersController {
   @Post('login')
   public async login(@Body() loginUserDto: LoginUserDto) {
     const user = await this.usersService.verifyUser(loginUserDto);
-    const userEntity =  this.usersService.login(user.name, user.email);
+    const userEntity = await this.usersService.login(user.name, user.email);
 
-    return userEntity
+    return { token: userEntity.access_token }
   }
 
   @UseGuards(JwtAuthGuard)
   @Post('checkauth')
   public async checkToken(@Req() { user: payload }) {
+
     return payload;
   }
 }

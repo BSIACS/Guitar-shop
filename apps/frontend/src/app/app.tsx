@@ -5,8 +5,9 @@ import { Route, Routes } from 'react-router';
 import { ProductsListPage } from '../pages/product-list/product-list.page';
 import { LoginPage } from '../pages/login/login.page';
 import { PrivateRouteComponent } from '../components/private-route/private-route.component';
-import { AuthorizationStatus } from '../types/authorization-status.enum';
 import { RegistrationPage } from '../pages/registration/registration.page';
+import { NotFoundPage } from '../pages/not-found/not-found.page';
+import { ProductPage } from '../pages/product-card/product.page';
 
 
 export function App() {
@@ -15,8 +16,9 @@ export function App() {
       <Routes>
         <Route path={'/'} element={<LoginPage/>}/>
         <Route path={'/registration'} element={<RegistrationPage/>}/>
-        <Route path={'/product-list'} element={<PrivateRouteComponent authStatus={AuthorizationStatus.AUTH}><ProductsListPage/></PrivateRouteComponent>}/>
-
+        <Route path={'/product-list'} element={<PrivateRouteComponent><ProductsListPage/></PrivateRouteComponent>}/>
+        <Route path='/product/:id' element={<ProductPage/>}/>
+        <Route path='*' element={<NotFoundPage/>}/>
       </Routes>
     </BrowserRouter>
   );

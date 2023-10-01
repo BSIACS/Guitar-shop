@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { AuthorizationStatus } from '../../types/authorization-status.enum';
 import { LogedUserData } from '../../types/loged-user-data.interface';
-import { loginThunk } from './authorization.thunk';
+import { checkIsAuthorizedThunk, loginThunk } from './authorization.thunk';
 import { setToken } from '../../pages/services/token';
 
 
@@ -32,7 +32,16 @@ export const authorizationSlice = createSlice({
         state.isLoading = false;
         state.logedUserData = action.payload;
         state.authorizationStatus = AuthorizationStatus.AUTH;
+        console.log(action.payload.token);
+
         setToken(action.payload.token);
+      })
+      .addCase(checkIsAuthorizedThunk.fulfilled, (state, action: PayloadAction<LogedUserData>) => {
+        state.logedUserData = action.payload;
+        state.authorizationStatus = AuthorizationStatus.AUTH;
+      })
+      .addCase(checkIsAuthorizedThunk.rejected, (state) => {
+        state.authorizationStatus = AuthorizationStatus.UNAUTH;
       })
   }
 });
