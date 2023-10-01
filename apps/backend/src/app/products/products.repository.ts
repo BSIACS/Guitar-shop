@@ -32,7 +32,7 @@ export class ProductsRepository {
     const product = await this.prisma.product.findMany({
       where: {
         type: typeData ?? undefined,
-        stringNumber: +stringNumber ?? undefined
+        stringNumber: stringNumber ? +stringNumber : undefined
       },
       include: {
         type: true

@@ -32,6 +32,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iL
 ###
 
 # Get products
+GET   http://localhost:5557/api/products/index?  HTTP/1.1
+
+###
+
+# Get products
 GET   http://localhost:5557/api/products/index?sortBy=date_added&page=1&sortOrder=asc&stringNumber=6  HTTP/1.1
 
 ###
