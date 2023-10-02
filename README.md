@@ -39,8 +39,9 @@ npm run backend
 ```bash
 npm run frontend
 ```
-## 5.3 Запуск фронтэнд и бэкэнд частей под одним адресом
 
-```bash
-npm run start-all
-```
+
+
+## Файл для тестирования REST backend/rest.http
+
+Количество затраченных часов - 25.

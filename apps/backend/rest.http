@@ -25,9 +25,14 @@ Content-Type: application/json
 }
 ###
 
-# Check is user authenticate
+# Check is user authorized
 POST   http://localhost:5557/api/users/checkauth  HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQHNvbWVtYWlsLmNvbSIsImlhdCI6MTY5NjA4NzU4MCwiZXhwIjoxNjk2MDg3NjQwfQ.ho1j0ibXheQ2-b_4fJuYFTf65YB4gSINbrykZvrbCNM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQHNvbWVtYWlsLmNvbSIsImlhdCI6MTY5NjE3MDg1MCwiZXhwIjoxNjk2MTcwOTEwfQ.9qByIobBDN2hu249prHi9mWE2ZNgMzAHEhBKPB_a_xI
+
+###
+
+# Get products
+GET   http://localhost:5557/api/products/index  HTTP/1.1
 
 ###
 
