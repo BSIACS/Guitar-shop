@@ -9,7 +9,6 @@ export const fetchProductsDataThunk = createAsyncThunk(
   async (payload, thunkApi) => {
     try {
       const response = await axios.get('http://localhost:5557/api/products/index');
-      console.log((response.data));
 
       return response.data;
     } catch (error: any) {

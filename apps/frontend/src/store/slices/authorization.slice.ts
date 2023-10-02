@@ -32,8 +32,6 @@ export const authorizationSlice = createSlice({
         state.isLoading = false;
         state.logedUserData = action.payload;
         state.authorizationStatus = AuthorizationStatus.AUTH;
-        console.log(action.payload.token);
-
         setToken(action.payload.token);
       })
       .addCase(checkIsAuthorizedThunk.fulfilled, (state, action: PayloadAction<LogedUserData>) => {
